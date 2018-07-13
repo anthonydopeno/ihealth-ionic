@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Add Medicine</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+	<form (ngSubmit)="post()" method="POST">
+		
+		<ion-input type="hidden" [(ngModel)]="medinfo.id" name="id" value="{{ $id }}"></ion-input>
+
+	<ion-item>
+		<ion-label color="primary" floating>Generic Name: </ion-label>
+    	<ion-input type="text" [(ngModel)]="medinfo.gname" name="gname" value="{{ $gname }}"></ion-input>
+	</ion-item>
+
+	<ion-item>
+		<ion-label color="primary" floating>Brand Name: </ion-label>
+    	<ion-input type="text" [(ngModel)]="medinfo.bname" name="bname" value="{{ $bname }}"></ion-input>
+	</ion-item>
+
+	<ion-item>
+			<ion-label color="primary" floating>Dosage: </ion-label>
+			<ion-input type="number"[(ngModel)]="medinfo.dosage" name="dosage" value="{{ $dosage }}"></ion-input><br>
+	</ion-item>
+	
+	<ion-item lines>
+		<ion-label color="primary" floating>Units: </ion-label>
+  			<ion-select [(ngModel)]="medinfo.unit" name="unit" >
+    			<ion-option value="Capsules(s)">Capsule(s)</ion-option>
+    			<ion-option value="Drop(s)">Drop(s)</ion-option>
+    			<ion-option value="Gram(s)">Gram(s)</ion-option>
+    			<ion-option value="Injection(s)">Injection(s)</ion-option>
+    			<ion-option value="Milligram(s)">Milligram(s)</ion-option>
+    			<ion-option value="Milliliter(s)">Milliliter(s)</ion-option>
+    			<ion-option value="Piece(s)">Piece(s)</ion-option>
+    			<ion-option value="Pill(s)">Pill(s)</ion-option>
+  			</ion-select>
+	</ion-item>
+
+	<ion-item>
+		<ion-label color="primary" floating>Intake Advice: </ion-label>
+  			<ion-select [(ngModel)]="medinfo.advice" name="advice">
+    			<ion-option value="None">None</ion-option>
+    			<ion-option value="Before Meal">Before Meal</ion-option>
+    			<ion-option value="With Meal">With Meal</ion-option>
+    			<ion-option value="After Meal">After Meal</ion-option>
+  			</ion-select>
+	</ion-item>
+	<br><br>
+
+	<button ion-button type="submit" full>Add</button>
+
+	</form>
+</ion-content>

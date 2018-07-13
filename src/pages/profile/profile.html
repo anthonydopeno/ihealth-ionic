@@ -1,0 +1,80 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>
+        <img height="35 px" weight="35 px" src="../www/assets/imgs/28740776_2146139235401636_1374441049_n.png">
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <h2>Setup Profile</h2>
+
+    <ion-input type="text" [(ngModel)]="profile.duid" value="{{ duid }}" hidden></ion-input>
+
+    <form (ngSubmit)="cprofile()" method="POST">
+    <ion-list>
+  
+  <!--    <ion-item>
+        <ion-label floating>UID:</ion-label>
+        <ion-input type="text" [(ngModel)]="profile.duid" name="duid" value="{{ duid }}"></ion-input>
+      </ion-item>  -->
+
+      <ion-item>
+        <ion-label floating>First Name:</ion-label>
+        <ion-input type="text" name="fname" [(ngModel)]="profile.fname" ></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" name="lname" [(ngModel)]="profile.lname"></ion-input>
+      </ion-item>
+
+      <br>
+      <ion-item>
+        <ion-label>Specialization</ion-label>
+        <ion-select [(ngModel)]="profile.sp" name="sp" cancelText="Cancel" okText="Choose">
+          <ion-option value="Physician/Medical Doctor" selected="true">Physician/Medical Doctor</ion-option>
+          <ion-option value="Physical Therapist">Physical Therapist</ion-option>
+          <ion-option value="Neurologists">Neurologists</ion-option>
+          <ion-option value="Psychiatrists">Psychiatrists</ion-option>
+          <ion-option value="Psychologist">Psychologist</ion-option>
+          <ion-option value="Rheumatologists">Rheumatologists</ion-option>
+          <ion-option value="Orthopedic Surgeons">Orthopedic Surgeons</ion-option>
+          <ion-option value="Physiatrist">Physiatrist</ion-option>
+          <ion-option value="Allergist/Immunologist">Allergist/Immunologist</ion-option>
+          <ion-option value="Pulmonologist">Pulmonologist</ion-option>
+          <ion-option value="Surgical Oncologist">Surgical Oncologist</ion-option>
+          <ion-option value="Medical Oncologist">Medical Oncologist</ion-option>
+          <ion-option value="Radiation Oncologist">Radiation Oncologist</ion-option>
+          <ion-option value="Cardiologist">Cardiologist</ion-option>
+          <ion-option value="Bariatricians">Bariatricians</ion-option>
+          <ion-option value="Endodontist">Endodontist</ion-option>
+          <ion-option value="Endocrinologist">Endocrinologist</ion-option>
+
+
+        </ion-select>
+      </ion-item>
+
+        <ion-item>
+            <ion-label floating>Location:</ion-label>
+            <ion-input type="text" name="loc" [(ngModel)]="profile.loc"></ion-input>
+          </ion-item>
+    
+    </ion-list>
+
+    
+    <div padding>
+      <button block ion-button type="submit">Done</button>
+    </div>
+  </form>
+</ion-content>

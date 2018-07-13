@@ -1,0 +1,36 @@
+page-home {
+
+    #topButtons {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        margin: auto;
+    
+    }
+    
+    #topButtons button {
+    
+        flex: 1;
+    }
+    
+    .displayed {
+    
+        padding-top: 125px;
+        margin: auto;
+    
+    }
+    
+    }
+    
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .bgdesign{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    

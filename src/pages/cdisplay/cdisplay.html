@@ -1,0 +1,25 @@
+<!--
+  Generated template for the CdisplayPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Consultation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- <h1>Consultation</h1> -->
+
+  <ion-item *ngFor="let result of result; let i = index">
+      <ion-label floating>{{ result.cdfname }} {{ result.cdlname }} <p> {{ result.cdate }} </p></ion-label>
+     <ion-textarea type="text" value="{{ result.cmessage }}" readonly></ion-textarea>
+    </ion-item>
+
+</ion-content>

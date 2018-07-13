@@ -1,0 +1,40 @@
+<ion-header no-border class="header">
+  <ion-navbar color="primary">
+    <ion-title><img class="homepagelogo" src="../www/assets/imgs/homepagelogo.png"></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div id="header2"></div>
+<div id="header3"></div>
+</ion-content>
+
+<ion-content padding>
+ 
+  <ion-grid padding>
+      <ion-row class="app">
+        <ion-col col-6 style="padding-left: 10px;"><img class="accpanel" src="../www/assets/imgs/account.png" alt="couldn't load" (click)="profile()">
+        </ion-col>
+        <ion-col col-6 style="padding-right: 10px;"><img class="accpanel2" src="../www/assets/imgs/list.png" alt="couldn't load" (click)="plist()"></ion-col>
+      </ion-row>
+      <ion-row class="app">
+          <ion-col col-6 style="padding-left: 10px;">Profile</ion-col>  
+          <ion-col col-6 style="padding-right: 10px;">Patient List</ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid padding>
+        <ion-row class="app">
+          <ion-col col-6 style="padding-left: 10px;"><img class="accpanel3" src="../www/assets/imgs/map.png" alt="couldn't load" (click)="map()">
+          </ion-col>
+        </ion-row>
+        <ion-row class="app">
+            <ion-col col-6 style="padding-left: 10px;">Patient Location</ion-col>  
+          </ion-row>
+      </ion-grid>
+
+
+
+    <img class="bgdesign" src="../www/assets/imgs/bgdesign.png" alt="couldn't load">
+
+</ion-content>

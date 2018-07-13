@@ -1,0 +1,52 @@
+<!--
+  Generated template for the HomepagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Homepage</ion-title>
+ <!--   <ion-buttons end>
+      <button ion-button icon-only (click)="inventory()">
+        <ion-icon name="filing"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1>Welcome to iHealth Patient {{ email }}</h1>
+
+  <ion-input type="text" value="{{ puid }}" #patuid hidden></ion-input>
+
+  <ion-item>
+    <div>First Name: {{ result.fname }}</div>
+    <div>Last Name: {{ result.lname }}</div>
+    <div>Location: {{ result.loc }}</div>
+    <div>Chronic: {{ result.chronic }}</div>
+</ion-item>
+
+ <!-- <button ion-button (click)="gpuid()">Show Details</button> -->
+
+  <button ion-button (click)="logout()">Logout</button>
+<!--
+  <button ion-button (click)="sorted()">Doctor List</button>
+
+  <ion-item *ngFor="let sorting of sorting; let i = index; ">
+    <div>Name: Dr. {{ sorting.fname }} {{ sorting.lname }}</div>
+    <button ion-button (click)="enroll(sorting.duid,i)" [id]="i">Enroll</button>
+    <button ion-button (click)="unenroll(sorting.duid,i)" [id]="'un'+i" color="danger" [disabled]="disabled">Unenroll</button>
+    <button ion-button (click)="gdirections(sorting.duid)" >Get Directions</button>
+</ion-item>
+-->
+
+
+
+
+</ion-content>
+

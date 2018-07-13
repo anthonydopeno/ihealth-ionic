@@ -1,0 +1,46 @@
+<!--
+  Generated template for the HomepagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+      <ion-title>Doctor List</ion-title>
+    <!--   <ion-buttons end>
+       <button ion-button icon-only (click)="inventory()">
+          <ion-icon name="filing"></ion-icon>
+        </button>
+      </ion-buttons> -->
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  
+    <h1>Doctor List</h1>
+  
+    <ion-input type="text" value="{{ puid }}" #patuid hidden></ion-input>
+  
+   <!-- <button ion-button (click)="gpuid()">Show Details</button> -->
+  
+   <!-- <button ion-button (click)="logout()">Logout</button> -->
+  
+    <button ion-button (click)="sorted()" id="run" hidden>Doctor List</button>
+  
+    <ion-item *ngFor="let sorting of sorting; let i = index; ">
+      <div>Name: Dr. {{ sorting.fname }} {{ sorting.lname }}</div>
+      <button ion-button (click)="enroll(sorting.duid,i)" [id]="i">Enroll</button>
+      <button ion-button (click)="unenroll(sorting.duid,i)" [id]="'un'+i" color="danger" [disabled]="disabled">Unenroll</button>
+      <button ion-button (click)="gdirections(sorting.duid)" >Get Directions</button>
+  </ion-item>
+  
+  
+  
+  
+  
+  </ion-content>
+  
+  

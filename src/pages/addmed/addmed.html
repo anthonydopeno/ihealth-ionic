@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <!-- <ion-title>Medicine</ion-title> -->
+
+    <!-- <button ion-button icon-start (click)="back()" start> -->
+      <ion-icon color="light" (click)="back()" start name="arrow-back">  Back</ion-icon>
+      <!-- Back
+    </button> -->
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <button id="addmedbtn" ion-button icon-start (click)="Addmed()" full>
+      <ion-icon name="ios-add-circle-outline"></ion-icon>
+      Add Medicine
+    </button>
+    <!-- <a (click)="edit(result.id)">display</a> -->
+
+	<ion-item id="pillbox" *ngFor="let result of result; let i = index" no-lines>
+
+  <a (click)="edit(result.id)">
+		<ion-item id="pillbox2" no-lines>
+      <div id="name" >{{ result.bname }}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+      <div  id="details">{{ result.dosage }} {{ result.unit }}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {{ result.advice }}
+      </div>
+    </ion-item>
+  </a>	
+  <button ion-button clear (click)="delete(result.id)" item-end>
+    <ion-icon id="delbtn" name="md-close-circle"></ion-icon>
+  </button>
+
+  </ion-item>
+  
+</ion-content>

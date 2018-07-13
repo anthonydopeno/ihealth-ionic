@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title> Medical Results</ion-title>
+
+    <ion-buttons end>
+      <button round ion-button icon-only (click)="takePhoto()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <h2>Welcome to Ionic!</h2> -->
+  <!-- <button ion-button full color="primary" (click)="takePhoto()">
+    <ion-icon name="camera"></ion-icon>&nbsp;Take Photo
+    </button> -->
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 *ngFor="let photo of photos; let id = index">
+          <ion-card class="block">
+            <ion-icon end name="close-circle" class="deleteIcon" (click)="deletePhoto(id)"></ion-icon>
+            <img [src]="photo" *ngIf="photo" />
+          </ion-card>
+  </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

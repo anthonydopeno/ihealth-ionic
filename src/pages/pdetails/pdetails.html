@@ -1,0 +1,31 @@
+<!--
+  Generated template for the PdetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Patient Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <h1>Your Patient {{ result.fname }} {{ result.lname }}</h1>
+
+    <ion-item>
+        <div>First Name: {{ result.fname }}</div>
+        <div>Last Name: {{ result.lname }}</div>
+        <div>Location: {{ result.loc }}</div>
+        <div>Chronic: {{ result.chronic }}</div>
+    </ion-item>
+
+    <button ion-button full color="secondary" (click)="goToPrintPage(result.fname,result.lname)">Print Prescription</button>
+
+    <div #map id="map"></div>
+
+</ion-content>

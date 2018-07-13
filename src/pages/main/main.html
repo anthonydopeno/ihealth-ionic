@@ -1,0 +1,62 @@
+<ion-header no-border class="header">
+    <ion-navbar color="primary">
+      <ion-title><img class="homepagelogo" src="../www/assets/imgs/homepagelogo.png"></ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div id="header2"></div>
+  <div id="header3"></div>
+</ion-content>
+
+<ion-content padding>
+   
+    <ion-grid padding>
+        <ion-row class="app">
+          <ion-col col-6 style="padding-left: 10px; margin-top: -10px;"><img class="accpanel" src="../www/assets/imgs/account.png" alt="couldn't load" (click)="profile()">
+          </ion-col>
+          <ion-col col-6 style="padding-right: 10px; margin-top: -10px;"><img class="accpanel2" src="../www/assets/imgs/pillreminder.png" alt="couldn't load" (click)="pill()"></ion-col>
+        </ion-row>
+        <ion-row class="app">
+            <ion-col col-6 style="padding-left: 10px;">Profile</ion-col>  
+            <ion-col col-6 style="padding-right: 10px;">Pill Reminder and Scheduler</ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid padding>
+          <ion-row class="app">
+            <ion-col col-6 style="padding-left: 10px; margin-top: -30px;"><img class="accpanel3" src="../www/assets/imgs/cons.png" alt="couldn't load" (click)="con()">
+            </ion-col>
+            <ion-col col-6 style="padding-right: 10px; margin-top: -30px;"><img class="accpanel4" src="../www/assets/imgs/camera.png" alt="couldn't load" (click)="cam()"></ion-col>
+          </ion-row>
+          <ion-row class="app">
+              <ion-col col-6 style="padding-left: 10px;">Consultations</ion-col>  
+              <ion-col col-6 style="padding-right: 10px;">Upload Record</ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid padding>
+            <ion-row class="app">
+              <ion-col col-6 style="padding-left: 10px; margin-top: -30px;"><img class="accpanel5" src="../www/assets/imgs/map.png" alt="couldn't load" (click)="map()">
+              </ion-col>
+              <ion-col col-6 style="z-index: 1; padding-right: 10px; margin-top: -30px;"><img class="accpanel5" src="../www/assets/imgs/kit.png" alt="couldn't load" (click)="mkit()">
+              </ion-col>
+            </ion-row>
+            <ion-row class="app">
+                <ion-col col-6 style="padding-left: 10px;">Clinic Location</ion-col>  
+                <ion-col col-6 style="z-index: 1; padding-right: 10px;">Medical Kit</ion-col>
+              </ion-row>
+          </ion-grid>
+
+          <ion-grid padding>
+              <ion-row class="app">
+                <ion-col col-6 style="margin-left: 65px; margin-top: -55px;"><img class="accpanel6" src="../www/assets/imgs/list.png" alt="couldn't load" (click)="dlist()"></ion-col>
+              </ion-row>
+              <ion-row class="app">
+                  <ion-col col-6 style="margin-left: 65px;">Doctor List</ion-col>
+                </ion-row>
+            </ion-grid>
+
+      <img class="bgdesign" src="../www/assets/imgs/bgdesign.png" alt="couldn't load">
+  
+</ion-content>

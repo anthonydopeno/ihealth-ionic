@@ -1,0 +1,33 @@
+.bgdesign{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#topButtons {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    margin: auto;
+}
+    
+#topButtons button {
+    flex: 1;
+}
+    
+.displayed {
+    padding-top: 50px;
+    margin: auto;
+}
+    
+::-webkit-scrollbar,*::-webkit-scrollbar {
+    display: none;
+}
+    
+#fields{
+    width: 90%;
+    margin: auto;
+}
+ 

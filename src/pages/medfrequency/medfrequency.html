@@ -1,0 +1,132 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Frequency</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="openMedicine()">
+        <h6>Set</h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </button>
+    </ion-buttons>
+  </ion-navbar>   
+</ion-header>
+
+<ion-content padding text-center>
+  <ion-list radio-group>
+    <ion-item>
+      <ion-label>Daily, X times a day</ion-label>
+      <ion-radio (click)="setradio('freq1')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Daily, every X hours</ion-label>
+      <ion-radio (click)="setradio('freq2')" ></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Every X days</ion-label>
+      <ion-radio (click)="setradio('freq3')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Specific days of week</ion-label>
+      <ion-radio (click)="setradio('freq4')"></ion-radio>
+    </ion-item> 
+
+    <ion-item>
+      <ion-label>Cycle: X days active, Y days paused</ion-label>
+      <ion-radio (click)="setradio('freq5')"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-item no-lines *ngIf="isSelected('freq1') || isSelected('freq3') || isSelected('freq4')">
+    <form [formGroup]="form" (ngSubmit)="manage(form.value)">
+      <ion-list margin-bottom>
+        <div formArrayName="technologies" margin-bottom>
+          <section [formGroupName]="i" *ngFor="let tech of form.controls.technologies.controls; let i = index">
+              <!-- <ion-item-divider color="light">Name #{{ i + 1 }}</ion-item-divider> -->
+            <ion-item>
+                <ion-datetime  placeholder="Select Time" displayFormat="h:mm A" pickerFormat="h mm A" formControlName="name"></ion-datetime>   
+                <button ion-button clear *ngIf="form.controls.technologies.length > 1" (click)="removeInputField(i)" item-end>
+                  <ion-icon name="close"></ion-icon>
+                </button>
+            </ion-item>
+          </section>
+        </div>
+        <span ion-button icon-left clear (click)="addNewInputField()">
+          <ion-icon name="add"></ion-icon>
+            Add Reminder Time
+        </span>
+      </ion-list>
+    </form>
+  </ion-item>
+  
+  <ion-item *ngIf="isSelected('freq2')">
+    <ion-label>Remind every:  </ion-label>
+    <ion-input type="number" placeholder="X hours"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isSelected('freq2')">
+    <ion-label>First Intake:  </ion-label>
+    <ion-datetime placeholder="00:00" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+  </ion-item>
+
+  <ion-item *ngIf="isSelected('freq2')">
+    <ion-label>Last Intake:  </ion-label>
+    <ion-datetime placeholder="00:00" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+  </ion-item>
+
+  <ion-item *ngIf="isSelected('freq3')">
+    <ion-label>Every: </ion-label>
+    <ion-input type="number" placeholder="X days"></ion-input>
+  </ion-item>
+
+  <ion-list *ngIf="isSelected('freq4')">
+
+    <ion-item>
+      <ion-label>Monday</ion-label>
+      <ion-checkbox [(ngModel)]="Monday"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Tuesday</ion-label>
+      <ion-checkbox [(ngModel)]="Tuesday"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Wednesday</ion-label>
+      <ion-checkbox [(ngModel)]="Wednesday"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Thursday</ion-label>
+      <ion-checkbox [(ngModel)]="Thursday"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Friday</ion-label>
+      <ion-checkbox [(ngModel)]="Friday"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Saturday</ion-label>
+      <ion-checkbox [(ngModel)]="Saturday"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Sunday</ion-label>
+      <ion-checkbox [(ngModel)]="Sunday"></ion-checkbox>
+    </ion-item>
+  
+  </ion-list>
+
+  <ion-item *ngIf="isSelected('freq5')">
+    <ion-label>Days active:  </ion-label>
+    <ion-input type="number" placeholder="X days"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="isSelected('freq5')">
+    <ion-label>Days paused:  </ion-label>
+    <ion-input type="number" placeholder="Y days"></ion-input>
+  </ion-item>
+
+</ion-content>

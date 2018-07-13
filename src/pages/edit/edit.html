@@ -1,0 +1,61 @@
+<!--
+  Generated template for the EditPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Edit</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-item *ngFor="let result of result; let i = index">
+		<ion-label color="primary" floating>Generic Name: </ion-label>
+    	<ion-input type="text" name="gname" value="{{ result.gname }}" #gname></ion-input>
+	</ion-item>
+
+	<ion-item *ngFor="let result of result; let i = index">
+		<ion-label color="primary" floating>Brand Name: </ion-label>
+    	<ion-input type="text" name="bname" value="{{ result.bname }}" #bname></ion-input>
+	</ion-item>
+
+	<ion-item *ngFor="let result of result; let i = index">
+			<ion-label color="primary" floating>Dosage: </ion-label>
+			<ion-input type="number" name="dosage" value="{{ result.dosage }}" #dosage></ion-input><br>
+	</ion-item>
+	
+	<ion-item lines *ngFor="let result of result; let i = index">
+		<ion-label color="primary" floating>Units: </ion-label>
+  			<ion-select name="unit" #unit ng-selected="">
+    			<ion-option value="Capsules(s)" >Capsule(s)</ion-option>
+    			<ion-option value="Drop(s)">Drop(s)</ion-option>
+    			<ion-option value="Gram(s)">Gram(s)</ion-option>
+    			<ion-option value="Injection(s)">Injection(s)</ion-option>
+    			<ion-option value="Milligram(s)">Milligram(s)</ion-option>
+    			<ion-option value="Milliliter(s)">Milliliter(s)</ion-option>
+    			<ion-option value="Piece(s)">Piece(s)</ion-option>
+    			<ion-option value="Pill(s)">Pill(s)</ion-option>
+  			</ion-select>
+	</ion-item>
+
+	<ion-item *ngFor="let result of result; let i = index">
+		<ion-label color="primary" floating>Intake Advice: </ion-label>
+  			<ion-select name="advice" #advice>
+    			<ion-option value="None">None</ion-option>
+    			<ion-option value="Before Meal">Before Meal</ion-option>
+    			<ion-option value="With Meal">With Meal</ion-option>
+    			<ion-option value="After Meal">After Meal</ion-option>
+  			</ion-select>
+	</ion-item>
+	<br><br>
+
+  <button ion-button (click)="saveupdate()" full>Save Update</button>
+  
+
+</ion-content>
